@@ -41,3 +41,15 @@ var server = app.listen(8081, function () {
    var host = server.address().address
    var port = server.address().port
 })
+
+app.get('/', function (req, res) {
+    console.log("Got a GET request for the homepage");
+    const userCount = Math.ceil(Math.random() * 100);
+    res.send(`Hello GET. Users are: ${userCount}`);
+ })
+
+ app.get('/', function (req, res) {
+    console.log("Got a GET request for the homepage");
+    const userCount = 10;
+    res.send(`Hello GET. Users are: ${userCount}`);
+ })
